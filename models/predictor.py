@@ -30,7 +30,6 @@ class WinePredictor:
             joblib.dump(self.model, self.model_path)
 
     def predict(self, input_data: dict):
-        """Expects input_data as a dictionary with keys matching CSV column names."""
         df = pd.DataFrame([input_data])
         prediction = self.model.predict(df)[0]
         return round(prediction, 2)

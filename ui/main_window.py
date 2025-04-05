@@ -11,7 +11,7 @@ import pandas as pd
 from ui.analysis_window import AnalysisWindow
 from models.wine_analyzer import WineAnalyzer
 from ui.true_positives_window import TruePositivesWindow
-
+from models.predictor import WinePredictor
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -86,7 +86,10 @@ class MainWindow(QMainWindow):
 
     def open_predictor_window(self):
         if self.df is not None:
-            self.predictor_window = PredictorWindow(self.df)
+            # Use the same path that was used to initialize WineAnalyzer
+            csv_path = self.analyzer.csv_path
+            predictor = WinePredictor(csv_path)
+            self.predictor_window = PredictorWindow(predictor)
             self.predictor_window.show()
 
     def open_analysis_window(self):

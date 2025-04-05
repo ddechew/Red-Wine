@@ -1,5 +1,5 @@
 import os
-
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QTabWidget
 )
@@ -39,4 +39,5 @@ class InspectWindow(QMainWindow):
         for i in range(len(self.df)):
             for j in range(len(self.df.columns)):
                 item = QTableWidgetItem(str(self.df.iat[i, j]))
+                item.setFlags(item.flags() & ~Qt.ItemIsEditable)  # ❗ Make item read-only
                 self.table.setItem(i, j, item)
