@@ -58,17 +58,17 @@ class PredictorWindow(QMainWindow):
 
     def fill_example_data(self):
         example = {
-            "fixed acidity": 7.0,
-            "volatile acidity": 0.35,
-            "citric acid": 0.4,
-            "residual sugar": 2.0,
-            "chlorides": 0.05,
-            "free sulfur dioxide": 15.0,
-            "total sulfur dioxide": 50.0,
-            "density": 0.995,
-            "pH": 3.3,
-            "sulphates": 0.65,
-            "alcohol": 11.0
+            "fixed acidity": 7.9,
+            "volatile acidity": 0.64,
+            "citric acid": 0.34,
+            "residual sugar": 2.5,
+            "chlorides": 0.076,
+            "free sulfur dioxide": 8.0,
+            "total sulfur dioxide": 17.0,
+            "density": 0.99235,
+            "pH": 3.15,
+            "sulphates": 0.72,
+            "alcohol": 13.1
         }
         for key, value in example.items():
             if key in self.inputs:
